@@ -1,0 +1,920 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0b0908;
+    color: #f5eee5;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+    --background: #0b0908;
+    --dark: #120e0b;
+    --card: #18120e;
+    --gold: #c9a15b;
+    --light-gold: #efd08a;
+    --text: #f5eee5;
+    --muted: #b8aa9b;
+    --border: rgba(201, 161, 91, 0.25);
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top-bar {
+    background: #070605;
+    color: var(--light-gold);
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 9, 8, 0.96);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.logo span {
+    display: block;
+
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+
+/* NAV LINKS */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 13px;
+    color: #ddd0c1;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--light-gold);
+}
+
+
+/* NAV BUTTON */
+
+.nav-button {
+    background: var(--gold);
+    color: #100c08;
+
+    padding: 11px 17px;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--light-gold);
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 80px 0;
+}
+
+
+/* HERO CONTENT */
+
+.small-title {
+    color: var(--light-gold);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 6vw, 76px);
+
+    line-height: 1.02;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+
+.hero-text {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+
+.main-button {
+    display: inline-block;
+
+    background: var(--gold);
+
+    color: #100c08;
+
+    padding: 13px 20px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: var(--light-gold);
+
+    transform: translateY(-2px);
+}
+
+
+.outline-button {
+    display: inline-block;
+
+    border: 1px solid var(--gold);
+
+    color: var(--light-gold);
+
+    padding: 12px 20px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.outline-button:hover {
+    background: var(--gold);
+
+    color: #100c08;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 560px;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+}
+
+
+.image-badge {
+    position: absolute;
+
+    bottom: 25px;
+    left: -18px;
+
+    background: #0d0a08;
+
+    border: 1px solid var(--border);
+
+    padding: 13px 17px;
+
+    font-size: 11px;
+
+    color: var(--light-gold);
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 0;
+}
+
+
+.section-heading {
+    max-width: 720px;
+
+    margin-bottom: 40px;
+}
+
+
+.section-heading.center {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 4vw, 55px);
+
+    line-height: 1.05;
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading p:not(.small-title) {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.feature-card {
+    background: linear-gradient(
+        145deg,
+        #19120d,
+        #100c09
+    );
+
+    border: 1px solid var(--border);
+
+    padding: 27px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--gold);
+}
+
+
+.feature-icon {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+
+.feature-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+
+.feature-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DARK SECTION
+========================= */
+
+.dark-section {
+    background: #130f0c;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+
+    padding: 90px 4%;
+}
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.service-card {
+    background: #18120e;
+
+    border: 1px solid var(--border);
+
+    padding: 27px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--gold);
+}
+
+
+.service-card span {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.service-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    line-height: 1.1;
+
+    margin: 13px 0 10px;
+}
+
+
+.service-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RITUAL SECTION
+========================= */
+
+.ritual-section {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 90px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+.ritual-image img {
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+}
+
+
+.ritual-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 4vw, 55px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+}
+
+
+.ritual-content > p:not(.small-title) {
+    color: var(--muted);
+
+    font-size: 15px;
+}
+
+
+.ritual-content ul {
+    list-style: none;
+
+    margin: 25px 0;
+}
+
+
+.ritual-content li {
+    padding: 9px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    color: var(--muted);
+}
+
+
+.ritual-content li::before {
+    content: "◆";
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    margin-right: 10px;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.process-card {
+    background: #18120e;
+
+    border: 1px solid var(--border);
+
+    padding: 28px;
+
+    min-height: 200px;
+
+    border-radius: 5px;
+}
+
+
+.process-card span {
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.process-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    margin: 15px 0 10px;
+}
+
+
+.process-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    text-align: center;
+
+    width: 92%;
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 100px 0;
+}
+
+
+.cta h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(38px, 5vw, 58px);
+
+    line-height: 1.05;
+
+    margin-bottom: 15px;
+}
+
+
+.cta p:not(.small-title) {
+    color: var(--muted);
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #070605;
+
+    border-top: 1px solid var(--border);
+
+    padding: 55px 4% 25px;
+}
+
+
+.footer-content {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 40px;
+}
+
+
+.footer-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    margin-bottom: 12px;
+}
+
+
+.footer-content p,
+.footer-content a {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+.footer-content a {
+    display: block;
+
+    margin: 7px 0;
+}
+
+
+.footer-content a:hover {
+    color: var(--light-gold);
+}
+
+
+.copyright {
+    width: 92%;
+    max-width: 1200px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    color: #82776c;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   WHATSAPP BUTTON
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 999;
+
+    background: #1d9f55;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 60px 0;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        height: 450px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ritual-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .top-bar {
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+
+    .navbar {
+        min-height: 70px;
+    }
+
+
+    nav {
+        display: none;
+    }
+
+
+    .nav-button {
+        display: none;
+    }
+
+
+    .logo {
+        font-size: 24px;
+    }
+
+
+    .hero {
+        width: 90%;
+
+        padding: 45px 0;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .hero-image img {
+        height: 380px;
+    }
+
+
+    .image-badge {
+        left: 10px;
+        bottom: 15px;
+    }
+
+
+    .section {
+        width: 90%;
+
+        padding: 65px 0;
+    }
+
+
+    .features,
+    .services-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .dark-section {
+        padding: 65px 5%;
+    }
+
+
+    .ritual-section {
+        width: 90%;
+
+        padding: 65px 0;
+    }
+
+
+    .ritual-image img {
+        height: 350px;
+    }
+
+
+    .footer-content {
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .copyright {
+        width: 90%;
+    }
+
+
+    .whatsapp {
+        right: 15px;
+        bottom: 15px;
+    }
+
+}
