@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact | GuptTantra</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 
     <style>
 
@@ -17,14 +19,7 @@
             padding: 80px 8%;
             background: #f7f2ea;
         }
-/* 
-        .contact-container {
-            max-width: 1100px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        } */
+
         .contact-container {
             max-width: 1100px;
             margin: auto;
@@ -35,44 +30,44 @@
         }
 
         .contact-info {
-           display: block !important;
-           color: #222222 !important;
-           text-align: left !important;
-           visibility: visible !important;
-        } 
+            display: block !important;
+            color: #222222 !important;
+            text-align: left !important;
+            visibility: visible !important;
+        }
 
         .contact-info h2 {
-           display: block !important;
-           color: #17120f !important;
-           font-family: "Cormorant Garamond", serif !important;
-           font-size: 42px !important;
-           line-height: 1.2 !important;
-           margin: 10px 0 20px !important;
-           visibility: visible !important;
+            display: block !important;
+            color: #17120f !important;
+            font-family: "Cormorant Garamond", serif !important;
+            font-size: 42px !important;
+            line-height: 1.2 !important;
+            margin: 10px 0 20px !important;
+            visibility: visible !important;
         }
 
         .contact-info p {
-           display: block !important;
-           color: #333333 !important;
-           font-size: 16px !important;
-           line-height: 1.8 !important;
-           visibility: visible !important;
+            display: block !important;
+            color: #333333 !important;
+            font-size: 16px !important;
+            line-height: 1.8 !important;
+            visibility: visible !important;
         }
 
         .contact-info .small-title {
-           color: #a47b32 !important;
-           font-size: 13px !important;
-           letter-spacing: 2px;
+            color: #a47b32 !important;
+            font-size: 13px !important;
+            letter-spacing: 2px;
         }
 
         .contact-box {
-           display: block !important;
-           margin-top: 30px;
+            display: block !important;
+            margin-top: 30px;
         }
 
         .contact-box p {
-           color: #333333 !important;
-           margin: 12px 0 !important;
+            color: #333333 !important;
+            margin: 12px 0 !important;
         }
 
 
@@ -212,6 +207,7 @@
             .contact-form {
                 padding: 25px;
             }
+
         }
 
     </style>
@@ -224,9 +220,14 @@
 
     <!-- TOP BAR -->
 
-    <div class="top-bar">
+    <div class="top-bar"
+         data-en="PRIVATE & CONFIDENTIAL CONSULTATION"
+         data-hi="निजी एवं गोपनीय परामर्श">
+
         PRIVATE & CONFIDENTIAL CONSULTATION
+
     </div>
+
 
 
     <!-- NAVBAR -->
@@ -235,32 +236,110 @@
 
         <div class="navbar">
 
+
             <div class="logo">
+
                 GUPTTANTRA
+
                 <span>BY DILIP TANTRIK</span>
+
             </div>
 
-            <nav>
 
-                <a href="index.html">Home</a>
+            <!-- HAMBURGER -->
 
-                <a href="services.html">Services</a>
+            <button class="menu-toggle"
+                    onclick="toggleMenu()">
 
-                <a href="contact.html">About / Contact</a>
+                ☰
+
+            </button>
+
+
+            <!-- MENU -->
+
+            <nav id="mainMenu">
+
+                <a href="index.html"
+                   data-en="Home"
+                   data-hi="होम">
+
+                    Home
+
+                </a>
+
+
+                <a href="services.html"
+                   data-en="Services"
+                   data-hi="सेवाएँ">
+
+                    Services
+
+                </a>
+
+
+                <a href="rituals.html"
+                   data-en="Rituals"
+                   data-hi="अनुष्ठान">
+
+                    Rituals
+
+                </a>
+                <a href="gallery.html"
+                    data-en="Gallery"
+                    data-hi="गैलरी">
+
+                    Gallery
+
+                </a>
+
+                <a href="videos.html"
+                   data-en="Videos"
+                   data-hi="वीडियो">
+
+                    Videos
+
+                </a>
+
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-hi="संपर्क">
+
+                    Contact
+
+                </a>
 
             </nav>
 
+
+            <!-- WHATSAPP -->
+
             <a href="https://wa.me/919754864696"
                target="_blank"
-               class="nav-button">
+               class="nav-button"
+               data-en="WhatsApp Consultation"
+               data-hi="WhatsApp परामर्श">
 
                 WhatsApp Consultation
 
             </a>
 
+
+            <!-- LANGUAGE BUTTON -->
+
+            <button class="language-btn"
+                    onclick="toggleLanguage()">
+
+                हिंदी
+
+            </button>
+
+
         </div>
 
     </header>
+
 
 
 
@@ -270,21 +349,38 @@
 
         <div class="section-heading center">
 
-            <p class="small-title">
+
+            <p class="small-title"
+               data-en="GET IN TOUCH"
+               data-hi="संपर्क करें">
+
                 GET IN TOUCH
+
             </p>
 
-            <h1>
+
+            <h1
+                data-en="Private & Confidential Consultation"
+                data-hi="निजी एवं गोपनीय परामर्श">
+
                 Private & Confidential Consultation
+
             </h1>
 
-            <p>
+
+            <p
+                data-en="Share your concern with us and connect for a private consultation."
+                data-hi="अपनी चिंता हमारे साथ साझा करें और निजी परामर्श के लिए संपर्क करें।">
+
                 Share your concern with us and connect for a private consultation.
+
             </p>
+
 
         </div>
 
     </section>
+
 
 
 
@@ -299,37 +395,102 @@
 
             <div class="contact-info">
 
-                <p class="small-title">
+
+                <p class="small-title"
+                   data-en="CONTACT GUPTTANTRA"
+                   data-hi="गुप्ततंत्र से संपर्क करें">
+
                     CONTACT GUPTTANTRA
+
                 </p>
 
-                <h2>
+
+                <h2
+                    data-en="Let's Discuss Your Concern"
+                    data-hi="आइए आपकी चिंता पर चर्चा करें">
+
                     Let's Discuss Your Concern
+
                 </h2>
 
-                <p>
+
+                <p
+                    data-en="Every consultation is handled privately and respectfully. You can contact us directly through WhatsApp or use the consultation form."
+                    data-hi="हर परामर्श को निजी और सम्मानपूर्वक संभाला जाता है। आप सीधे WhatsApp के माध्यम से संपर्क कर सकते हैं या परामर्श फॉर्म का उपयोग कर सकते हैं।">
+
                     Every consultation is handled privately and respectfully.
                     You can contact us directly through WhatsApp or use the
                     consultation form.
+
                 </p>
+
 
 
                 <div class="contact-box">
 
+
                     <p>
-                        <strong>Phone:</strong><br>
+
+                        <strong
+                            data-en="Phone:"
+                            data-hi="फोन:">
+
+                            Phone:
+
+                        </strong>
+
+                        <br>
+
                         +91 97548 64696
+
                     </p>
 
-                    <p>
-                        <strong>WhatsApp:</strong><br>
-                        Available for private consultation
-                    </p>
 
                     <p>
-                        <strong>Consultation Hours:</strong><br>
-                        Daily: 9 AM – 9 PM
+
+                        <strong
+                            data-en="WhatsApp:"
+                            data-hi="WhatsApp:">
+
+                            WhatsApp:
+
+                        </strong>
+
+                        <br>
+
+                        <span
+                            data-en="Available for private consultation"
+                            data-hi="निजी परामर्श के लिए उपलब्ध">
+
+                            Available for private consultation
+
+                        </span>
+
                     </p>
+
+
+                    <p>
+
+                        <strong
+                            data-en="Consultation Hours:"
+                            data-hi="परामर्श का समय:">
+
+                            Consultation Hours:
+
+                        </strong>
+
+                        <br>
+
+                        <span
+                            data-en="Daily: 9 AM – 9 PM"
+                            data-hi="प्रतिदिन: सुबह 9 बजे – रात 9 बजे">
+
+                            Daily: 9 AM – 9 PM
+
+                        </span>
+
+                    </p>
+
 
                 </div>
 
@@ -339,13 +500,17 @@
 
                 <a href="https://wa.me/919754864696"
                    target="_blank"
-                   class="main-button">
+                   class="main-button"
+                   data-en="Chat on WhatsApp"
+                   data-hi="WhatsApp पर चैट करें">
 
                     Chat on WhatsApp
 
                 </a>
 
+
             </div>
+
 
 
 
@@ -353,13 +518,24 @@
 
             <div class="contact-form">
 
-                <p class="small-title">
+
+                <p class="small-title"
+                   data-en="CONSULTATION FORM"
+                   data-hi="परामर्श फॉर्म">
+
                     CONSULTATION FORM
+
                 </p>
 
-                <h2>
+
+                <h2
+                    data-en="Send Your Request"
+                    data-hi="अपना अनुरोध भेजें">
+
                     Send Your Request
+
                 </h2>
+
 
 
                 <form>
@@ -368,6 +544,8 @@
                     <input
                         type="text"
                         placeholder="Your Name"
+                        data-placeholder-en="Your Name"
+                        data-placeholder-hi="आपका नाम"
                         required
                     >
 
@@ -375,56 +553,99 @@
                     <input
                         type="tel"
                         placeholder="Phone Number"
+                        data-placeholder-en="Phone Number"
+                        data-placeholder-hi="फोन नंबर"
                         required
                     >
 
 
                     <select required>
 
-                        <option value="">
+                        <option value=""
+                                data-en="Select Consultation Type"
+                                data-hi="परामर्श का प्रकार चुनें">
+
                             Select Consultation Type
+
                         </option>
 
-                        <option value="Love & Relationship">
+
+                        <option value="Love & Relationship"
+                                data-en="Love & Relationship"
+                                data-hi="प्रेम और रिश्ते">
+
                             Love & Relationship
+
                         </option>
 
-                        <option value="Marriage Consultation">
+
+                        <option value="Marriage Consultation"
+                                data-en="Marriage Consultation"
+                                data-hi="विवाह परामर्श">
+
                             Marriage Consultation
+
                         </option>
 
-                        <option value="Family Problems">
+
+                        <option value="Family Problems"
+                                data-en="Family Problems"
+                                data-hi="पारिवारिक समस्याएँ">
+
                             Family Problems
+
                         </option>
 
-                        <option value="Business & Career">
+
+                        <option value="Business & Career"
+                                data-en="Business & Career"
+                                data-hi="व्यवसाय और करियर">
+
                             Business & Career
+
                         </option>
 
-                        <option value="Spiritual Guidance">
+
+                        <option value="Spiritual Guidance"
+                                data-en="Spiritual Guidance"
+                                data-hi="आध्यात्मिक मार्गदर्शन">
+
                             Spiritual Guidance
+
                         </option>
 
-                        <option value="Other">
+
+                        <option value="Other"
+                                data-en="Other"
+                                data-hi="अन्य">
+
                             Other
+
                         </option>
 
                     </select>
 
 
+
                     <textarea
                         placeholder="Briefly describe your concern"
-                    ></textarea>
+                        data-placeholder-en="Briefly describe your concern"
+                        data-placeholder-hi="अपनी चिंता के बारे में संक्षेप में बताएं">
+                    </textarea>
+
 
 
                     <button
                         type="button"
                         class="main-button"
-                        onclick="sendWhatsApp()">
+                        onclick="sendWhatsApp()"
+                        data-en="Send Request"
+                        data-hi="अनुरोध भेजें">
 
                         Send Request
 
                     </button>
+
 
                 </form>
 
@@ -436,25 +657,43 @@
 
 
 
+
     <!-- ABOUT SECTION -->
 
     <section class="about-section">
 
-        <p class="small-title">
+
+        <p class="small-title"
+           data-en="ABOUT GUPTTANTRA"
+           data-hi="गुप्ततंत्र के बारे में">
+
             ABOUT GUPTTANTRA
+
         </p>
 
-        <h2>
+
+        <h2
+            data-en="Traditional Spiritual Guidance"
+            data-hi="पारंपरिक आध्यात्मिक मार्गदर्शन">
+
             Traditional Spiritual Guidance
+
         </h2>
 
-        <p>
+
+        <p
+            data-en="GuptTantra provides private spiritual consultations based on traditional practices and personal guidance. Our approach focuses on privacy, respect and individual consultation."
+            data-hi="गुप्ततंत्र पारंपरिक प्रथाओं और व्यक्तिगत मार्गदर्शन पर आधारित निजी आध्यात्मिक परामर्श प्रदान करता है। हमारा दृष्टिकोण गोपनीयता, सम्मान और व्यक्तिगत परामर्श पर केंद्रित है।">
+
             GuptTantra provides private spiritual consultations based on
             traditional practices and personal guidance. Our approach focuses
             on privacy, respect and individual consultation.
+
         </p>
 
+
     </section>
+
 
 
 
@@ -462,27 +701,47 @@
 
     <section class="cta">
 
-        <p class="small-title">
+
+        <p class="small-title"
+           data-en="PRIVATE CONSULTATION"
+           data-hi="निजी परामर्श">
+
             PRIVATE CONSULTATION
+
         </p>
 
-        <h2>
+
+        <h2
+            data-en="Need Personal Guidance?"
+            data-hi="क्या आपको व्यक्तिगत मार्गदर्शन चाहिए?">
+
             Need Personal Guidance?
+
         </h2>
 
-        <p>
+
+        <p
+            data-en="Connect with us for a private consultation."
+            data-hi="निजी परामर्श के लिए हमसे संपर्क करें।">
+
             Connect with us for a private consultation.
+
         </p>
+
 
         <a href="https://wa.me/919754864696"
            target="_blank"
-           class="main-button">
+           class="main-button"
+           data-en="WhatsApp Consultation"
+           data-hi="WhatsApp परामर्श">
 
             WhatsApp Consultation
 
         </a>
 
+
     </section>
+
 
 
 
@@ -490,75 +749,146 @@
 
     <footer>
 
+
         <div class="footer-content">
 
 
             <div>
 
                 <div class="logo">
+
                     GUPTTANTRA
+
                     <span>BY DILIP TANTRIK</span>
+
                 </div>
 
-                <p>
+
+                <p
+                    data-en="Traditional spiritual guidance, private consultation and contemplative practices."
+                    data-hi="पारंपरिक आध्यात्मिक मार्गदर्शन, निजी परामर्श और आध्यात्मिक साधनाएँ।">
+
                     Traditional spiritual guidance, private consultation
                     and contemplative practices.
+
                 </p>
 
             </div>
 
 
+
             <div>
 
-                <h3>
+
+                <h3
+                    data-en="Quick Links"
+                    data-hi="त्वरित लिंक">
+
                     Quick Links
+
                 </h3>
 
-                <a href="index.html">
+
+                <a href="index.html"
+                   data-en="Home"
+                   data-hi="होम">
+
                     Home
+
                 </a>
 
-                <a href="services.html">
+
+                <a href="services.html"
+                   data-en="Services"
+                   data-hi="सेवाएँ">
+
                     Services
+
                 </a>
 
-                <a href="contact.html">
-                    About / Contact
+
+                <a href="rituals.html"
+                   data-en="Rituals"
+                   data-hi="अनुष्ठान">
+
+                    Rituals
+
+                </a>
+
+
+                <a href="videos.html"
+                   data-en="Videos"
+                   data-hi="वीडियो">
+
+                    Videos
+
+                </a>
+
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-hi="संपर्क">
+
+                    Contact
+
                 </a>
 
             </div>
 
 
+
             <div>
 
-                <h3>
+
+                <h3
+                    data-en="Contact"
+                    data-hi="संपर्क">
+
                     Contact
+
                 </h3>
+
 
                 <p>
                     +91 97548 64696
                 </p>
 
-                <p>
+
+                <p
+                    data-en="WhatsApp Consultation"
+                    data-hi="WhatsApp परामर्श">
+
                     WhatsApp Consultation
+
                 </p>
 
-                <p>
+
+                <p
+                    data-en="Daily: 9 AM – 9 PM"
+                    data-hi="प्रतिदिन: सुबह 9 बजे – रात 9 बजे">
+
                     Daily: 9 AM – 9 PM
+
                 </p>
 
             </div>
 
+
         </div>
 
 
-        <div class="copyright">
+
+        <div class="copyright"
+             data-en="© 2026 GuptTantra. All Rights Reserved."
+             data-hi="© 2026 GuptTantra. सर्वाधिकार सुरक्षित।">
 
             © 2026 GuptTantra. All Rights Reserved.
 
         </div>
 
+
     </footer>
+
 
 
 
@@ -566,11 +896,92 @@
 
     <a href="https://wa.me/919754864696"
        target="_blank"
-       class="whatsapp">
+       class="whatsapp"
+       data-en="WhatsApp"
+       data-hi="WhatsApp">
 
         WhatsApp
 
     </a>
+    <!-- =========================
+     MOBILE BOTTOM NAVIGATION
+========================= -->
+
+<div class="mobile-bottom-nav">
+
+    <a href="index.html"
+       class="bottom-nav-item">
+
+        <span class="bottom-icon">⌂</span>
+
+        <span data-en="Home" data-hi="होम">
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="services.html"
+       class="bottom-nav-item">
+
+        <span class="bottom-icon">☷</span>
+
+        <span data-en="Services" data-hi="सेवाएँ">
+            Services
+        </span>
+
+    </a>
+
+
+    <a href="rituals.html"
+       class="bottom-nav-item">
+
+        <span class="bottom-icon">ॐ</span>
+
+        <span data-en="Rituals" data-hi="अनुष्ठान">
+            Rituals
+        </span>
+
+    </a>
+    <a href="gallery.html"
+   class="bottom-nav-item">
+
+    <span class="bottom-icon">▦</span>
+
+    <span
+        data-en="Gallery"
+        data-hi="गैलरी">
+
+        Gallery
+
+    </span>
+
+    </a>
+
+    <a href="videos.html"
+       class="bottom-nav-item">
+
+        <span class="bottom-icon">▶</span>
+
+        <span data-en="Videos" data-hi="वीडियो">
+            Videos
+        </span>
+
+    </a>
+
+
+    <a href="contact.html"
+       class="bottom-nav-item active">
+
+        <span class="bottom-icon">☎</span>
+
+        <span data-en="Contact" data-hi="संपर्क">
+            Contact
+        </span>
+
+    </a>
+
+</div>
 
 
 
@@ -581,11 +992,11 @@
         function sendWhatsApp() {
 
             let name = document.querySelector(
-                'input[placeholder="Your Name"]'
+                'input[type="text"]'
             ).value;
 
             let phone = document.querySelector(
-                'input[placeholder="Phone Number"]'
+                'input[type="tel"]'
             ).value;
 
             let type = document.querySelector(
@@ -599,7 +1010,9 @@
 
             if (name === "" || phone === "" || type === "") {
 
-                alert("Please fill in your Name, Phone Number and Consultation Type.");
+                alert(
+                    "Please fill in your Name, Phone Number and Consultation Type."
+                );
 
                 return;
 
@@ -622,6 +1035,12 @@
         }
 
     </script>
+
+
+
+    <!-- MAIN JAVASCRIPT -->
+
+    <script src="js/script.js"></script>
 
 
 </body>
