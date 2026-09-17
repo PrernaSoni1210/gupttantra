@@ -934,6 +934,12 @@ footer {
 
     .menu-toggle {
         display: block;
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+
     }
 
     .navbar {
