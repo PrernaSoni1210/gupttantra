@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
 
     <title>GuptTantra | Traditional Spiritual Guidance</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
@@ -53,45 +54,43 @@
 
             <nav id="mainMenu">
 
-                <a href="index.html"
-                   data-en="Home"
-                   data-hi="होम">
-                    Home
-                </a>
+    <a href="/"
+       data-en="Home"
+       data-hi="होम">
+        Home
+    </a>
 
-                <a href="services.html"
-                   data-en="Services"
-                   data-hi="सेवाएँ">
-                    Services
-                </a>
+    <a href="/services/"
+       data-en="Services"
+       data-hi="सेवाएँ">
+        Services
+    </a>
 
-                <a href="rituals.html"
-                   data-en="Rituals"
-                   data-hi="अनुष्ठान">
-                    Rituals
-                </a>
-                <a href="gallery.html"
-                   data-en="Gallery"
-                   data-hi="गैलरी">
+    <a href="/rituals/"
+       data-en="Rituals"
+       data-hi="अनुष्ठान">
+        Rituals
+    </a>
 
-                   Gallery
+    <a href="/gallery/"
+       data-en="Gallery"
+       data-hi="गैलरी">
+        Gallery
+    </a>
 
-                </a>
+    <a href="/videos/"
+       data-en="Videos"
+       data-hi="वीडियो">
+        Videos
+    </a>
 
-                <a href="videos.html"
-                   data-en="Videos"
-                   data-hi="वीडियो">
-                    Videos
-                </a>
+    <a href="/contact/"
+       data-en="Contact"
+       data-hi="संपर्क">
+        Contact
+    </a>
 
-                <a href="contact.html"
-                   data-en="Contact"
-                   data-hi="संपर्क">
-                    Contact
-                </a>
-
-            </nav>
-
+    </nav>
 
             <!-- WHATSAPP -->
 
@@ -187,11 +186,11 @@
 
 
         <div class="hero-image">
+          <img
+            src="{% static 'images/hero_img_1.jpeg' %}"
+            alt="GuptTantra"
+           >
 
-            <img
-                src="images/hero_img_1.jpeg"
-                alt="GuptTantra"
-            >
             <div class="image-badge"
                  data-en="✓ PRIVATE • CONFIDENTIAL"
                  data-hi="✓ निजी • गोपनीय">
@@ -1581,106 +1580,77 @@
 
     <div class="mobile-bottom-nav">
 
-        <a href="index.html"
-           class="bottom-nav-item active">
+    <a href="/" class="bottom-nav-item active">
 
-            <span class="bottom-icon">⌂</span>
+        <span class="bottom-icon">⌂</span>
 
-            <span
-                data-en="Home"
-                data-hi="होम">
-
-                Home
-
-            </span>
-
-        </a>
-
-
-        <a href="services.html"
-           class="bottom-nav-item">
-
-            <span class="bottom-icon">☷</span>
-
-            <span
-                data-en="Services"
-                data-hi="सेवाएँ">
-
-                Services
-
-            </span>
-
-        </a>
-
-
-        <a href="rituals.html"
-           class="bottom-nav-item">
-
-            <span class="bottom-icon">ॐ</span>
-
-            <span
-                data-en="Rituals"
-                data-hi="अनुष्ठान">
-
-                Rituals
-
-            </span>
-
-        </a>
-        <a href="gallery.html"
-        class="bottom-nav-item">
-
-        <span class="bottom-icon">▦</span>
-
-        <span
-        data-en="Gallery"
-        data-hi="गैलरी">
-
-        Gallery
-
+        <span data-en="Home" data-hi="होम">
+            Home
         </span>
 
     </a>
 
-        <a href="videos.html"
-           class="bottom-nav-item">
 
-            <span class="bottom-icon">▶</span>
+    <a href="/services/" class="bottom-nav-item">
 
-            <span
-                data-en="Videos"
-                data-hi="वीडियो">
+        <span class="bottom-icon">☷</span>
 
-                Videos
+        <span data-en="Services" data-hi="सेवाएँ">
+            Services
+        </span>
 
-            </span>
-
-        </a>
+    </a>
 
 
-        <a href="contact.html"
-           class="bottom-nav-item">
+    <a href="/rituals/" class="bottom-nav-item">
 
-            <span class="bottom-icon">☎</span>
+        <span class="bottom-icon">ॐ</span>
 
-            <span
-                data-en="Contact"
-                data-hi="संपर्क">
+        <span data-en="Rituals" data-hi="अनुष्ठान">
+            Rituals
+        </span>
 
-                Contact
+    </a>
 
-            </span>
 
-        </a>
+    <a href="/gallery/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▦</span>
+
+        <span data-en="Gallery" data-hi="गैलरी">
+            Gallery
+        </span>
+
+    </a>
+
+
+    <a href="/videos/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▶</span>
+
+        <span data-en="Videos" data-hi="वीडियो">
+            Videos
+        </span>
+
+    </a>
+
+
+    <a href="/contact/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☎</span>
+
+        <span data-en="Contact" data-hi="संपर्क">
+            Contact
+        </span>
+
+    </a>
 
     </div>
 
 
-
-
     <!-- JAVASCRIPT -->
 
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 

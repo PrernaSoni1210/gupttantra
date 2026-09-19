@@ -1,0 +1,601 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services | GuptTantra</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar"
+         data-en="PRIVATE & CONFIDENTIAL CONSULTATION"
+         data-hi="निजी एवं गोपनीय परामर्श">
+
+        PRIVATE & CONFIDENTIAL CONSULTATION
+
+    </div>
+
+
+
+    <!-- NAVBAR -->
+
+    <header>
+
+        <div class="navbar">
+
+
+            <div class="logo">
+
+                GUPTTANTRA
+
+                <span>BY DILIP TANTRIK</span>
+
+            </div>
+
+
+            <!-- HAMBURGER -->
+
+            <button class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </button>
+
+
+            <!-- MENU -->
+
+            
+            <nav id="mainMenu">
+
+    <a href="/"
+       data-en="Home"
+       data-hi="होम">
+        Home
+    </a>
+
+    <a href="/services/"
+       data-en="Services"
+       data-hi="सेवाएँ">
+        Services
+    </a>
+
+    <a href="/rituals/"
+       data-en="Rituals"
+       data-hi="अनुष्ठान">
+        Rituals
+    </a>
+
+    <a href="/gallery/"
+       data-en="Gallery"
+       data-hi="गैलरी">
+        Gallery
+    </a>
+
+    <a href="/videos/"
+       data-en="Videos"
+       data-hi="वीडियो">
+        Videos
+    </a>
+
+    <a href="/contact/"
+       data-en="Contact"
+       data-hi="संपर्क">
+        Contact
+    </a>
+
+    </nav>
+
+            <!-- WHATSAPP -->
+
+            <a href="https://wa.me/919754864696"
+               target="_blank"
+               class="nav-button"
+               data-en="WhatsApp Consultation"
+               data-hi="WhatsApp परामर्श">
+
+                WhatsApp Consultation
+
+            </a>
+
+
+            <!-- LANGUAGE -->
+
+            <button class="language-btn"
+                    onclick="toggleLanguage()">
+
+                हिंदी
+
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <div class="section-heading center">
+
+
+            <p class="small-title"
+               data-en="GUPTTANTRA CONSULTATIONS"
+               data-hi="गुप्ततंत्र परामर्श">
+
+                GUPTTANTRA CONSULTATIONS
+
+            </p>
+
+
+            <h1
+                data-en="Private Spiritual Consultations"
+                data-hi="निजी आध्यात्मिक परामर्श">
+
+                Private Spiritual Consultations
+
+            </h1>
+
+
+            <p
+                data-en="One-to-one guidance through traditional spiritual perspectives with privacy and respect."
+                data-hi="गोपनीयता और सम्मान के साथ पारंपरिक आध्यात्मिक दृष्टिकोण से व्यक्तिगत मार्गदर्शन।">
+
+                One-to-one guidance through traditional
+                spiritual perspectives with privacy and respect.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- SERVICES -->
+
+    
+    <section class="dark-section">
+
+    <div class="services-grid">
+
+        {% for service in services %}
+
+        <div class="service-card">
+
+            <span>
+                {{ forloop.counter|stringformat:"02d" }}
+            </span>
+
+            <h3
+                data-en="{{ service.title }}"
+                data-hi="{{ service.title_hindi }}">
+
+                {{ service.title }}
+
+            </h3>
+
+            <p
+                data-en="{{ service.description }}"
+                data-hi="{{ service.description_hindi }}">
+
+                {{ service.description }}
+
+            </p>
+
+            <a href="https://wa.me/919754864696"
+               target="_blank"
+               class="outline-button"
+               data-en="Inquire on WhatsApp"
+               data-hi="WhatsApp पर पूछताछ करें">
+
+                Inquire on WhatsApp
+
+            </a>
+
+        </div>
+
+        {% empty %}
+
+        <p style="text-align:center;">
+            No services available.
+        </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+    <!-- TRADITIONAL SECTION -->
+
+    <section class="ritual-section">
+
+
+        <div class="ritual-image">
+
+            <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqPzeC3rJptmCzvoM0hjQJQhP2MC6egMrGdMqMqybQzky1wDc8OhMNmEpQZN2BOb8TGCaFl71JHFRZz1PiFby_XipOJTQQCaRGYpYDrFJwWbfOHAT_RVUVCa1ccoEcbqri-Be5yz01HT0qCaprhq12Quij5ApJcO8QSc7LiOY333lWSh2nmDExI-gtwRkmJa_2nhR6AA2EviQbYPtkXEOl52zZEF3AL6VdkWQPjm_AruK2wuZZedYc"
+                alt="Traditional Ritual">
+
+        </div>
+
+
+
+        <div class="ritual-content">
+
+
+            <p class="small-title"
+               data-en="TRADITIONAL ELEMENTS"
+               data-hi="पारंपरिक तत्व">
+
+                TRADITIONAL ELEMENTS
+
+            </p>
+
+
+            <h2
+                data-en="Guidance Without Sensationalism"
+                data-hi="बिना अतिशयोक्ति के मार्गदर्शन">
+
+                Guidance Without Sensationalism
+
+            </h2>
+
+
+            <p
+                data-en="GuptTantra focuses on respectful, traditional and contemplative spiritual guidance."
+                data-hi="गुप्ततंत्र सम्मानजनक, पारंपरिक और चिंतनशील आध्यात्मिक मार्गदर्शन पर केंद्रित है।">
+
+                GuptTantra focuses on respectful,
+                traditional and contemplative spiritual
+                guidance.
+
+            </p>
+
+
+            <ul>
+
+                <li
+                    data-en="Traditional spiritual practices"
+                    data-hi="पारंपरिक आध्यात्मिक प्रथाएँ">
+                    Traditional spiritual practices
+                </li>
+
+                <li
+                    data-en="Sacred ritual guidance"
+                    data-hi="पवित्र अनुष्ठान मार्गदर्शन">
+                    Sacred ritual guidance
+                </li>
+
+                <li
+                    data-en="Personal consultation"
+                    data-hi="व्यक्तिगत परामर्श">
+                    Personal consultation
+                </li>
+
+                <li
+                    data-en="Confidential communication"
+                    data-hi="गोपनीय संवाद">
+                    Confidential communication
+                </li>
+
+            </ul>
+
+
+            <a href="contact.html"
+               class="main-button"
+               data-en="Request Consultation"
+               data-hi="परामर्श का अनुरोध करें">
+
+                Request Consultation
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+
+        <p class="small-title"
+           data-en="PRIVATE CONSULTATION"
+           data-hi="निजी परामर्श">
+
+            PRIVATE CONSULTATION
+
+        </p>
+
+
+        <h2
+            data-en="Ready To Discuss Your Concern?"
+            data-hi="क्या आप अपनी चिंता पर चर्चा करने के लिए तैयार हैं?">
+
+            Ready To Discuss Your Concern?
+
+        </h2>
+
+
+        <p
+            data-en="Contact us for a private and respectful consultation."
+            data-hi="निजी और सम्मानजनक परामर्श के लिए हमसे संपर्क करें।">
+
+            Contact us for a private and respectful
+            consultation.
+
+        </p>
+
+
+        <a href="https://wa.me/919754864696"
+           target="_blank"
+           class="main-button"
+           data-en="WhatsApp Consultation"
+           data-hi="WhatsApp परामर्श">
+
+            WhatsApp Consultation
+
+        </a>
+
+
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="logo">
+
+                    GUPTTANTRA
+
+                    <span>
+                        BY DILIP TANTRIK
+                    </span>
+
+                </div>
+
+
+                <p
+                    data-en="Traditional spiritual guidance, private consultation and contemplative practices."
+                    data-hi="पारंपरिक आध्यात्मिक मार्गदर्शन, निजी परामर्श और आध्यात्मिक साधनाएँ।">
+
+                    Traditional spiritual guidance,
+                    private consultation and
+                    contemplative practices.
+
+                </p>
+
+            </div>
+
+
+
+
+            <div>
+
+                <h3
+                    data-en="Quick Links"
+                    data-hi="त्वरित लिंक">
+
+                    Quick Links
+
+                </h3>
+
+
+                <a href="index.html"
+                   data-en="Home"
+                   data-hi="होम">
+                    Home
+                </a>
+
+
+                <a href="services.html"
+                   data-en="Services"
+                   data-hi="सेवाएँ">
+                    Services
+                </a>
+
+
+                <a href="rituals.html"
+                   data-en="Rituals"
+                   data-hi="अनुष्ठान">
+                    Rituals
+                </a>
+
+
+                <a href="videos.html"
+                   data-en="Videos"
+                   data-hi="वीडियो">
+                    Videos
+                </a>
+
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-hi="संपर्क">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+
+            <div>
+
+                <h3
+                    data-en="Contact"
+                    data-hi="संपर्क">
+
+                    Contact
+
+                </h3>
+
+
+                <p>
+                    +91 97548 64696
+                </p>
+
+
+                <p
+                    data-en="WhatsApp Consultation"
+                    data-hi="WhatsApp परामर्श">
+
+                    WhatsApp Consultation
+
+                </p>
+
+
+                <p
+                    data-en="Daily: 9 AM – 9 PM"
+                    data-hi="प्रतिदिन: सुबह 9 बजे – रात 9 बजे">
+
+                    Daily: 9 AM – 9 PM
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="copyright"
+             data-en="© 2026 GuptTantra. All Rights Reserved."
+             data-hi="© 2026 GuptTantra. सर्वाधिकार सुरक्षित।">
+
+            © 2026 GuptTantra. All Rights Reserved.
+
+        </div>
+
+
+    </footer>
+
+
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <a href="https://wa.me/919754864696"
+       target="_blank"
+       class="whatsapp"
+       data-en="WhatsApp"
+       data-hi="WhatsApp">
+
+        WhatsApp
+
+    </a>
+     <!-- =========================
+     MOBILE BOTTOM NAVIGATION
+========================= -->
+
+<div class="mobile-bottom-nav">
+
+    <a href="/" class="bottom-nav-item active">
+
+        <span class="bottom-icon">⌂</span>
+
+        <span data-en="Home" data-hi="होम">
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="/services/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☷</span>
+
+        <span data-en="Services" data-hi="सेवाएँ">
+            Services
+        </span>
+
+    </a>
+
+
+    <a href="/rituals/" class="bottom-nav-item">
+
+        <span class="bottom-icon">ॐ</span>
+
+        <span data-en="Rituals" data-hi="अनुष्ठान">
+            Rituals
+        </span>
+
+    </a>
+
+
+    <a href="/gallery/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▦</span>
+
+        <span data-en="Gallery" data-hi="गैलरी">
+            Gallery
+        </span>
+
+    </a>
+
+
+    <a href="/videos/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▶</span>
+
+        <span data-en="Videos" data-hi="वीडियो">
+            Videos
+        </span>
+
+    </a>
+
+
+    <a href="/contact/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☎</span>
+
+        <span data-en="Contact" data-hi="संपर्क">
+            Contact
+        </span>
+
+    </a>
+
+</div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+
+</html>

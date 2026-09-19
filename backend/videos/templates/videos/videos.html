@@ -1,0 +1,447 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Videos | Gupt Tantra</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        /* =========================
+           VIDEOS PAGE
+        ========================= */
+
+        .videos-page {
+            background: #111;
+            color: #fff;
+        }
+
+        .videos-hero {
+            padding: 100px 20px 70px;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.85)),
+                        url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPxKdCHfpo20nip-8W-bsVWtvAxgmL80xxaObrMjDT8larWwfBXghPIs3VIKcelhIWnuJxbjZOyEZWpPWm5qiLgePcsRMR7r0CTnVE83llH76FcCGmyWFdISKW5bwR9Z2Vl-lq0IYC6eKcowCGSfM7j2PCq5cV_QJuks58ndJuIjV7uc243fXaHKl3Ivx2ZnsvOc3LIaFF_SjRM1V8Cs8Na5YiKz2J7vCU9jebFHs3N1z8DEaUz7L");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .videos-hero h1 {
+            color: #d4af37;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .videos-hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        .videos-section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .videos-section h2 {
+            text-align: center;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .videos-intro {
+            text-align: center;
+            color: #bbb;
+            max-width: 700px;
+            margin: 0 auto 45px;
+            line-height: 1.7;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .video-card {
+            background: #1b1b1b;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-content {
+            padding: 20px;
+        }
+
+        .video-content h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .video-content p {
+            color: #bbb;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .video-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding: 45px 20px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .video-cta h2 {
+            margin-bottom: 15px;
+        }
+
+        .video-cta p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        .video-whatsapp {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #d4af37;
+            color: #111;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .videos-hero {
+                padding: 80px 20px 60px;
+            }
+
+            .videos-hero h1 {
+                font-size: 32px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .videos-section {
+                padding: 50px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="videos-page">
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            Gupt Tantra
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+        <nav id="mainMenu">
+
+    <a href="/"
+       data-en="Home"
+       data-hi="होम">
+        Home
+    </a>
+
+    <a href="/services/"
+       data-en="Services"
+       data-hi="सेवाएँ">
+        Services
+    </a>
+
+    <a href="/rituals/"
+       data-en="Rituals"
+       data-hi="अनुष्ठान">
+        Rituals
+    </a>
+
+    <a href="/gallery/"
+       data-en="Gallery"
+       data-hi="गैलरी">
+        Gallery
+    </a>
+
+    <a href="/videos/"
+       data-en="Videos"
+       data-hi="वीडियो">
+        Videos
+    </a>
+
+    <a href="/contact/"
+       data-en="Contact"
+       data-hi="संपर्क">
+        Contact
+    </a>
+
+    </nav>
+
+        <a href="https://wa.me/919754864696"
+           class="nav-button">
+            WhatsApp
+        </a>
+
+        <button class="language-btn"
+                onclick="toggleLanguage()">
+            हिंदी
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="videos-hero">
+
+        <h1
+            data-en="Our Videos"
+            data-hi="हमारे वीडियो">
+            Our Videos
+        </h1>
+
+        <p
+            data-en="Explore our spiritual guidance, traditional practices, rituals and other informative videos."
+            data-hi="हमारी आध्यात्मिक मार्गदर्शन, पारंपरिक विधियों, अनुष्ठानों और अन्य जानकारीपूर्ण वीडियो देखें।">
+            Explore our spiritual guidance, traditional practices,
+            rituals and other informative videos.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         VIDEOS
+    ========================= -->
+
+    <section class="videos-section">
+
+        <h2
+            data-en="Spiritual & Traditional Videos"
+            data-hi="आध्यात्मिक एवं पारंपरिक वीडियो">
+            Spiritual & Traditional Videos
+        </h2>
+
+        <p class="videos-intro"
+           data-en="Watch our selected videos to learn more about traditional spiritual practices and guidance."
+           data-hi="पारंपरिक आध्यात्मिक विधियों और मार्गदर्शन के बारे में अधिक जानने के लिए हमारे चुने हुए वीडियो देखें।">
+            Watch our selected videos to learn more about
+            traditional spiritual practices and guidance.
+        </p>
+
+
+        <div class="video-grid">
+
+    {% for video in videos %}
+
+    <div class="video-card">
+
+        <div class="video-wrapper">
+
+            {% if video.video_file %}
+
+                <video controls>
+                    <source src="{{ video.video_file.url }}">
+                    Your browser does not support the video tag.
+                </video>
+
+            {% elif video.video_url %}
+
+                <iframe 
+                   src="{{ video.youtube_embed_url }}" 
+                    title="{{ video.title }}" 
+                    allowfullscreen>
+                </iframe>
+            {% endif %}
+
+        </div>
+
+        <div class="video-content">
+
+            <h3>{{ video.title }}</h3>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <p>No videos available.</p>
+
+    {% endfor %}
+
+</div>
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <div class="video-cta">
+
+            <h2
+                data-en="Need Personal Guidance?"
+                data-hi="व्यक्तिगत मार्गदर्शन चाहिए?">
+                Need Personal Guidance?
+            </h2>
+
+            <p
+                data-en="For consultation and more information, contact us directly."
+                data-hi="परामर्श और अधिक जानकारी के लिए सीधे हमसे संपर्क करें।">
+                For consultation and more information,
+                contact us directly.
+            </p>
+
+            <a href="https://wa.me/919754864696"
+               class="video-whatsapp"
+               data-en="Contact on WhatsApp"
+               data-hi="WhatsApp पर संपर्क करें">
+                Contact on WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p
+            data-en="© 2026 Gupt Tantra. All Rights Reserved."
+            data-hi="© 2026 गुप्त तंत्र। सर्वाधिकार सुरक्षित।">
+            © 2026 Gupt Tantra. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <a href="https://wa.me/919754864696"
+       class="whatsapp-float">
+        WhatsApp
+    </a>
+
+
+    <!-- =========================
+         MOBILE BOTTOM NAV
+    ========================= -->
+<div class="mobile-bottom-nav">
+
+    <a href="/" class="bottom-nav-item active">
+
+        <span class="bottom-icon">⌂</span>
+
+        <span data-en="Home" data-hi="होम">
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="/services/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☷</span>
+
+        <span data-en="Services" data-hi="सेवाएँ">
+            Services
+        </span>
+
+    </a>
+
+
+    <a href="/rituals/" class="bottom-nav-item">
+
+        <span class="bottom-icon">ॐ</span>
+
+        <span data-en="Rituals" data-hi="अनुष्ठान">
+            Rituals
+        </span>
+
+    </a>
+
+
+    <a href="/gallery/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▦</span>
+
+        <span data-en="Gallery" data-hi="गैलरी">
+            Gallery
+        </span>
+
+    </a>
+
+
+    <a href="/videos/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▶</span>
+
+        <span data-en="Videos" data-hi="वीडियो">
+            Videos
+        </span>
+
+    </a>
+
+
+    <a href="/contact/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☎</span>
+
+        <span data-en="Contact" data-hi="संपर्क">
+            Contact
+        </span>
+
+    </a>
+
+</div>
+
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

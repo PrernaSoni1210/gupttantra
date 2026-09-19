@@ -1,0 +1,903 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rituals | GuptTantra</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+
+        /* =========================
+           RITUALS PAGE
+        ========================= */
+
+        .rituals-page {
+            background: #17120f;
+            color: white;
+        }
+
+
+        /* HERO */
+
+        .rituals-hero {
+            padding: 90px 8%;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(23,18,15,0.82),
+                    rgba(23,18,15,0.92)
+                ),
+                url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6JrqncW39uInGeKl-FZ24rIoMwum8BY3AXy_eiXa0Ys05uO5f5R6OTST7NyoTQxfImWSu_Bvohibj0C-eM1mA0WsjBn_ZBDno1UJ2CcrnOMCxd6mRvzdmSPfbqqMCDIkN3-H-674Mi7lJXJRtHGqc6PSsk7wOTw0JtCT-gjNTnh0QWRDOX5gc-BxYUjrgtAn3D8Bqn_PYbvqj2LCfC9ltsujJF1bCSn2ARuhtZfoTGzOcwB18llt0");
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        .rituals-hero h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 55px;
+            margin: 15px 0;
+            color: #ffffff;
+        }
+
+
+        .rituals-hero p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            color: #dddddd;
+            font-size: 17px;
+        }
+
+
+        /* RITUAL CARDS */
+
+        .rituals-grid-section {
+            padding: 80px 8%;
+            background: #17120f;
+        }
+
+
+        .rituals-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        .ritual-card {
+            background: #211a16;
+            border: 1px solid rgba(212,175,55,0.25);
+            padding: 35px 28px;
+            transition: 0.3s;
+        }
+
+
+        .ritual-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+
+        .ritual-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+
+        .ritual-number {
+            color: #d4af37;
+            font-size: 13px;
+            letter-spacing: 2px;
+        }
+
+
+        .ritual-card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            color: #ffffff;
+            margin: 12px 0;
+        }
+
+
+        .ritual-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+
+        /* TRADITIONAL SECTION */
+
+        .ritual-feature {
+            padding: 80px 8%;
+            background: #f7f2ea;
+            color: #222;
+        }
+
+
+        .ritual-feature-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+
+        .ritual-feature-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+        }
+
+
+        .ritual-feature-content .small-title {
+            color: #a47b32;
+        }
+
+
+        .ritual-feature-content h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 45px;
+            color: #17120f;
+            margin: 15px 0 20px;
+        }
+
+
+        .ritual-feature-content p {
+            line-height: 1.8;
+            color: #444;
+        }
+
+
+        .ritual-feature-content ul {
+            margin: 25px 0;
+            padding-left: 20px;
+        }
+
+
+        .ritual-feature-content li {
+            margin: 12px 0;
+            color: #333;
+        }
+
+
+        /* CTA */
+
+        .rituals-cta {
+            padding: 80px 8%;
+            text-align: center;
+            background: #211a16;
+            color: white;
+        }
+
+
+        .rituals-cta h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 44px;
+            margin: 15px 0;
+        }
+
+
+        .rituals-cta p {
+            color: #cccccc;
+            margin-bottom: 25px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .rituals-hero {
+                padding: 65px 6%;
+            }
+
+
+            .rituals-hero h1 {
+                font-size: 40px;
+            }
+
+
+            .rituals-grid-section {
+                padding: 60px 6%;
+            }
+
+
+            .rituals-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .ritual-feature {
+                padding: 60px 6%;
+            }
+
+
+            .ritual-feature-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+
+            .ritual-feature-image img {
+                height: 350px;
+            }
+
+
+            .ritual-feature-content h2 {
+                font-size: 36px;
+            }
+
+
+            .rituals-cta {
+                padding: 60px 6%;
+            }
+
+
+            .rituals-cta h2 {
+                font-size: 36px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="rituals-page">
+
+
+    <!-- =========================
+         TOP BAR
+    ========================= -->
+
+    <div class="top-bar"
+         data-en="PRIVATE & CONFIDENTIAL CONSULTATION"
+         data-hi="निजी एवं गोपनीय परामर्श">
+
+        PRIVATE & CONFIDENTIAL CONSULTATION
+
+    </div>
+
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <header>
+
+        <div class="navbar">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                GUPTTANTRA
+
+                <span>BY DILIP TANTRIK</span>
+
+            </div>
+
+
+
+            <!-- HAMBURGER -->
+
+            <button class="menu-toggle"
+                    onclick="toggleMenu()">
+
+                ☰
+
+            </button>
+
+
+
+            <!-- MENU -->
+
+            <nav id="mainMenu">
+
+    <a href="/"
+       data-en="Home"
+       data-hi="होम">
+        Home
+    </a>
+
+    <a href="/services/"
+       data-en="Services"
+       data-hi="सेवाएँ">
+        Services
+    </a>
+
+    <a href="/rituals/"
+       data-en="Rituals"
+       data-hi="अनुष्ठान">
+        Rituals
+    </a>
+
+    <a href="/gallery/"
+       data-en="Gallery"
+       data-hi="गैलरी">
+        Gallery
+    </a>
+
+    <a href="/videos/"
+       data-en="Videos"
+       data-hi="वीडियो">
+        Videos
+    </a>
+
+    <a href="/contact/"
+       data-en="Contact"
+       data-hi="संपर्क">
+        Contact
+    </a>
+
+    </nav>
+
+
+            <!-- WHATSAPP -->
+
+            <a href="https://wa.me/919754864696"
+               target="_blank"
+               class="nav-button"
+               data-en="WhatsApp Consultation"
+               data-hi="WhatsApp परामर्श">
+
+                WhatsApp Consultation
+
+            </a>
+
+
+
+            <!-- LANGUAGE -->
+
+            <button class="language-btn"
+                    onclick="toggleLanguage()">
+
+                हिंदी
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="rituals-hero">
+
+        <p class="small-title"
+           data-en="TRADITIONAL RITUALS"
+           data-hi="पारंपरिक अनुष्ठान">
+
+            TRADITIONAL RITUALS
+
+        </p>
+
+
+        <h1
+            data-en="Sacred Rituals & Spiritual Practices"
+            data-hi="पवित्र अनुष्ठान और आध्यात्मिक साधनाएँ">
+
+            Sacred Rituals & Spiritual Practices
+
+        </h1>
+
+
+        <p
+            data-en="Explore traditional spiritual practices, rituals and sacred guidance with privacy, respect and a contemplative approach."
+            data-hi="गोपनीयता, सम्मान और आध्यात्मिक दृष्टिकोण के साथ पारंपरिक साधनाओं, अनुष्ठानों और पवित्र मार्गदर्शन को समझें।">
+
+            Explore traditional spiritual practices,
+            rituals and sacred guidance with privacy,
+            respect and a contemplative approach.
+
+        </p>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         RITUAL CARDS
+    ========================= -->
+
+    <section class="rituals-grid-section">
+
+        <div class="section-heading center">
+
+            <p class="small-title"
+               data-en="OUR RITUAL PRACTICES"
+               data-hi="हमारी अनुष्ठानिक प्रथाएँ">
+
+                OUR RITUAL PRACTICES
+
+            </p>
+
+
+            <h2
+                data-en="Traditional Spiritual Rituals"
+                data-hi="पारंपरिक आध्यात्मिक अनुष्ठान">
+
+                Traditional Spiritual Rituals
+
+            </h2>
+
+        </div>
+
+
+        <br><br>
+
+
+        <div class="rituals-grid">
+
+    {% for ritual in rituals %}
+
+    <div class="ritual-card">
+
+        <div class="ritual-icon">
+            🕉️
+        </div>
+
+        <span class="ritual-number">
+            {{ forloop.counter|stringformat:"02d" }}
+        </span>
+
+        <h3
+            data-en="{{ ritual.title }}"
+            data-hi="{{ ritual.title_hindi }}">
+
+            {{ ritual.title }}
+
+        </h3>
+
+        <p
+            data-en="{{ ritual.description }}"
+            data-hi="{{ ritual.description_hindi }}">
+
+            {{ ritual.description }}
+
+        </p>
+
+    </div>
+
+    {% empty %}
+
+    <p style="text-align:center;">
+        No rituals available.
+    </p>
+
+    {% endfor %}
+
+</div>
+
+</section>
+
+
+    <!-- =========================
+         FEATURE SECTION
+    ========================= -->
+
+    <section class="ritual-feature">
+
+        <div class="ritual-feature-container">
+
+
+            <div class="ritual-feature-image">
+
+                <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6JrqncW39uInGeKl-FZ24rIoMwum8BY3AXy_eiXa0Ys05uO5f5R6OTST7NyoTQxfImWSu_Bvohibj0C-eM1mA0WsjBn_ZBDno1UJ2CcrnOMCxd6mRvzdmSPfbqqMCDIkN3-H-674Mi7lJXJRtHGqc6PSsk7wOTw0JtCT-gjNTnh0QWRDOX5gc-BxYUjrgtAn3D8Bqn_PYbvqj2LCfC9ltsujJF1bCSn2ARuhtZfoTGzOcwB18llt0"
+                    alt="Traditional Spiritual Ritual">
+
+            </div>
+
+
+
+            <div class="ritual-feature-content">
+
+
+                <p class="small-title"
+                   data-en="TRADITIONAL ELEMENTS"
+                   data-hi="पारंपरिक तत्व">
+
+                    TRADITIONAL ELEMENTS
+
+                </p>
+
+
+                <h2
+                    data-en="Respecting Traditional Practices"
+                    data-hi="पारंपरिक प्रथाओं का सम्मान">
+
+                    Respecting Traditional Practices
+
+                </h2>
+
+
+                <p
+                    data-en="GuptTantra presents traditional spiritual practices in a respectful and private setting. Each consultation focuses on understanding the individual's concern and explaining relevant traditional practices."
+                    data-hi="गुप्ततंत्र पारंपरिक आध्यात्मिक प्रथाओं को सम्मानजनक और निजी वातावरण में प्रस्तुत करता है। प्रत्येक परामर्श व्यक्ति की चिंता को समझने और संबंधित पारंपरिक प्रथाओं को समझाने पर केंद्रित है।">
+
+                    GuptTantra presents traditional spiritual
+                    practices in a respectful and private setting.
+                    Each consultation focuses on understanding
+                    the individual's concern and explaining
+                    relevant traditional practices.
+
+                </p>
+
+
+                <ul>
+
+                    <li
+                        data-en="Traditional spiritual practices"
+                        data-hi="पारंपरिक आध्यात्मिक प्रथाएँ">
+
+                        Traditional spiritual practices
+
+                    </li>
+
+
+                    <li
+                        data-en="Sacred ritual guidance"
+                        data-hi="पवित्र अनुष्ठान मार्गदर्शन">
+
+                        Sacred ritual guidance
+
+                    </li>
+
+
+                    <li
+                        data-en="Mantra and meditation practices"
+                        data-hi="मंत्र एवं ध्यान साधनाएँ">
+
+                        Mantra and meditation practices
+
+                    </li>
+
+
+                    <li
+                        data-en="Private personal consultation"
+                        data-hi="निजी व्यक्तिगत परामर्श">
+
+                        Private personal consultation
+
+                    </li>
+
+                </ul>
+
+
+                <a href="contact.html"
+                   class="main-button"
+                   data-en="Request Consultation"
+                   data-hi="परामर्श का अनुरोध करें">
+
+                    Request Consultation
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         CTA
+    ========================= -->
+
+    <section class="rituals-cta">
+
+
+        <p class="small-title"
+           data-en="PRIVATE CONSULTATION"
+           data-hi="निजी परामर्श">
+
+            PRIVATE CONSULTATION
+
+        </p>
+
+
+        <h2
+            data-en="Want To Discuss A Ritual?"
+            data-hi="क्या आप किसी अनुष्ठान पर चर्चा करना चाहते हैं?">
+
+            Want To Discuss A Ritual?
+
+        </h2>
+
+
+        <p
+            data-en="Connect with us for private guidance about traditional rituals and spiritual practices."
+            data-hi="पारंपरिक अनुष्ठानों और आध्यात्मिक प्रथाओं के बारे में निजी मार्गदर्शन के लिए हमसे संपर्क करें।">
+
+            Connect with us for private guidance
+            about traditional rituals and spiritual practices.
+
+        </p>
+
+
+        <a href="https://wa.me/919754864696"
+           target="_blank"
+           class="main-button"
+           data-en="WhatsApp Consultation"
+           data-hi="WhatsApp परामर्श">
+
+            WhatsApp Consultation
+
+        </a>
+
+    </section>
+
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <div class="logo">
+
+                    GUPTTANTRA
+
+                    <span>
+                        BY DILIP TANTRIK
+                    </span>
+
+                </div>
+
+
+                <p
+                    data-en="Traditional spiritual guidance, private consultation and contemplative practices."
+                    data-hi="पारंपरिक आध्यात्मिक मार्गदर्शन, निजी परामर्श और आध्यात्मिक साधनाएँ।">
+
+                    Traditional spiritual guidance,
+                    private consultation and
+                    contemplative practices.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-en="Quick Links"
+                    data-hi="त्वरित लिंक">
+
+                    Quick Links
+
+                </h3>
+
+
+                <a href="index.html"
+                   data-en="Home"
+                   data-hi="होम">
+
+                    Home
+
+                </a>
+
+
+                <a href="services.html"
+                   data-en="Services"
+                   data-hi="सेवाएँ">
+
+                    Services
+
+                </a>
+
+
+                <a href="rituals.html"
+                   data-en="Rituals"
+                   data-hi="अनुष्ठान">
+
+                    Rituals
+
+                </a>
+
+
+                <a href="videos.html"
+                   data-en="Videos"
+                   data-hi="वीडियो">
+
+                    Videos
+
+                </a>
+
+
+                <a href="contact.html"
+                   data-en="Contact"
+                   data-hi="संपर्क">
+
+                    Contact
+
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-en="Contact"
+                    data-hi="संपर्क">
+
+                    Contact
+
+                </h3>
+
+
+                <p>
+                    +91 97548 64696
+                </p>
+
+
+                <p
+                    data-en="WhatsApp Consultation"
+                    data-hi="WhatsApp परामर्श">
+
+                    WhatsApp Consultation
+
+                </p>
+
+
+                <p
+                    data-en="Daily: 9 AM – 9 PM"
+                    data-hi="प्रतिदिन: सुबह 9 बजे – रात 9 बजे">
+
+                    Daily: 9 AM – 9 PM
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="copyright"
+             data-en="© 2026 GuptTantra. All Rights Reserved."
+             data-hi="© 2026 GuptTantra. सर्वाधिकार सुरक्षित।">
+
+            © 2026 GuptTantra. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+
+
+    <!-- =========================
+         FLOATING WHATSAPP
+    ========================= -->
+
+    <a href="https://wa.me/919754864696"
+       target="_blank"
+       class="whatsapp"
+       data-en="WhatsApp"
+       data-hi="WhatsApp">
+
+        WhatsApp
+
+    </a>
+
+
+
+
+    <!-- =========================
+         MOBILE BOTTOM NAVIGATION
+    ========================= -->
+
+<div class="mobile-bottom-nav">
+
+    <a href="/" class="bottom-nav-item active">
+
+        <span class="bottom-icon">⌂</span>
+
+        <span data-en="Home" data-hi="होम">
+            Home
+        </span>
+
+    </a>
+
+
+    <a href="/services/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☷</span>
+
+        <span data-en="Services" data-hi="सेवाएँ">
+            Services
+        </span>
+
+    </a>
+
+
+    <a href="/rituals/" class="bottom-nav-item">
+
+        <span class="bottom-icon">ॐ</span>
+
+        <span data-en="Rituals" data-hi="अनुष्ठान">
+            Rituals
+        </span>
+
+    </a>
+
+
+    <a href="/gallery/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▦</span>
+
+        <span data-en="Gallery" data-hi="गैलरी">
+            Gallery
+        </span>
+
+    </a>
+
+
+    <a href="/videos/" class="bottom-nav-item">
+
+        <span class="bottom-icon">▶</span>
+
+        <span data-en="Videos" data-hi="वीडियो">
+            Videos
+        </span>
+
+    </a>
+
+
+    <a href="/contact/" class="bottom-nav-item">
+
+        <span class="bottom-icon">☎</span>
+
+        <span data-en="Contact" data-hi="संपर्क">
+            Contact
+        </span>
+
+    </a>
+
+</div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+</body>
+
+</html>
