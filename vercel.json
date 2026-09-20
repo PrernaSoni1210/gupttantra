@@ -10,5 +10,8 @@
       "src": "/(.*)",
       "dest": "backend/config/wsgi.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHONPATH": "backend"
+  }
 }
