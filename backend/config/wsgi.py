@@ -15,3 +15,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 # Vercel deployment
 
 application = get_wsgi_application()
+# Vercel Django deployment
