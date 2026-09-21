@@ -7,6 +7,7 @@ import sys
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -15,7 +16,36 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+
     execute_from_command_line(sys.argv)
+
+    # Automatically create/update the superuser after migrations
+    if len(sys.argv) > 1 and sys.argv[1] == 'migrate':
+        from django.contrib.auth import get_user_model
+
+        username = os.environ.get('DJANGO_SUPERUSER_USERNAME')
+        email = os.environ.get('DJANGO_SUPERUSER_EMAIL')
+        password = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
+
+        if username and email and password:
+            User = get_user_model()
+
+            user, created = User.objects.get_or_create(
+                username=username,
+                defaults={
+                    'email': email,
+                    'is_staff': True,
+                    'is_superuser': True,
+                    'is_active': True,
+                }
+            )
+
+            user.email = email
+            user.is_staff = True
+            user.is_superuser = True
+            user.is_active = True
+            user.set_password(password)
+            user.save()
 
 
 if __name__ == '__main__':
